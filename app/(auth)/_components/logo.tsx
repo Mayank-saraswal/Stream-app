@@ -9,8 +9,8 @@ const font = Poppins({
 
 export const Logo = () => {
     return (
-        <div className="flex items-center gap-x-4">
-            <div className="flex-shrink-0">
+        <div className="flex  flex-col items-center gap-y-4">
+            <div className="bg-white rounded-full p-1">
                 <Image
                     className="rounded-full"
                     src="/logo.svg"
@@ -19,12 +19,14 @@ export const Logo = () => {
                     height={60}
                 />
             </div>
-            <div className="flex flex-col justify-center">
-                <h1 className={cn("text-2xl font-bold text-primary", font.className)}>
+            <div className= { cn("flex flex-col items-center" , font.className) } >
+                <p className="text-xl font-semibold">
                     Mstream
-                </h1>
-                <p className={cn("text-sm text-muted-foreground font-medium", font.className)}>
-                    lets Play & Stream
+
+                </p>
+                <p className="text-sm text-muted-foreground">
+                    Let's Play
+
                 </p>
             </div>
         </div>

@@ -65,7 +65,7 @@ export const UserAvatar = ({
 
 
 interface UserAvatarSkeletonProps extends VariantProps<typeof AvatarSizes> {
-   
+    _?: never;
 };
    export const UserAvatarSkeleton = ({
         size

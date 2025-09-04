@@ -1,5 +1,4 @@
-
-import { Container } from "lucide-react";
+import { Container } from "./_components/container";
 import { Navbar } from "./_components/navbar";
 import { Sidebar } from "./_components/sidebar";
 import { Suspense } from "react";

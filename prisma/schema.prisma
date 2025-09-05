@@ -22,7 +22,7 @@ model User {
   externalUserId      String   @unique   
   bio            String?  @db.Text
   following      Follow[] @relation("Following")
-  followers      Follow[] @relation("FollowedBy")
+  followedBy      Follow[] @relation("FollowedBy")
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
 }

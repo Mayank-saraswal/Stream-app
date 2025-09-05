@@ -1,6 +1,26 @@
 import { getSelf } from "./auth-service";
 import { db } from "./db";
 
+export const getFollowedUsers = async () => {
+    try {
+        const self = await getSelf();
+        const followedUsers =  db.follow.findMany({
+            where: {
+                followerId: self.id
+            },
+            include: {
+                following: true
+            }
+        });
+        return followedUsers
+    
+    
+       
+    } catch  {
+        return [];
+    }
+}
+
 export const isFollowingUser = async (id:string) =>{
     try {
         const self = await getSelf();
@@ -12,7 +32,7 @@ export const isFollowingUser = async (id:string) =>{
         }
         
         if(otherUser.id === self.id) {
-            return true
+            throw new Error("Cannot follow yourself")
         }
 
         const existingFollow = await db.follow.findFirst({
@@ -39,7 +59,7 @@ export const followUser = async (id:string) =>{
     }
 
     if(otherUser.id === self.id) {
-        throw new Error("Cannot follow yourself")
+        return true
     }
 
     const existingFollow = await db.follow.findFirst({

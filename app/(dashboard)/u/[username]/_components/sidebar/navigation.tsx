@@ -14,7 +14,7 @@ export const Navigation = () => {
     const { user } = useUser()
     const routes = [
         {
-            lable: "",
+            lable: " Stream",
             href: `/u/${user?.username}`,
             icon: Fullscreen
         },

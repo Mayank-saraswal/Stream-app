@@ -53,7 +53,13 @@ export async function POST(req: Request) {
         data: {
           externalUserId: evt.data.id,
           username: evt.data.username || `user_${evt.data.id.slice(0, 8)}`,
-          imageUrl: evt.data.image_url || ""
+          imageUrl: evt.data.image_url || "",
+          stream:{
+            create:{
+              name: `${evt.data.username}'s stream`
+            },
+            
+          }
         }
       });
       console.log("✅ User created successfully:", evt.data.id);

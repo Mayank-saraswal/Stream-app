@@ -16,6 +16,9 @@ export const StreamPlayer = ({
     isFollowing
 }: StreamPlayerProps) => {
     const { token, name, identity,  } = useViewerToken(user.id);
+    // console.log("token", token);
+    // console.log("name", name);
+    // console.log("identity", identity);
 
     // Show loading state while token is being created
  

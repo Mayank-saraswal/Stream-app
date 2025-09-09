@@ -45,7 +45,8 @@ export const ConnectModel = () => {
             createIngress(parseInt(ingressType) )
             .then(()=> {
                 toast.success("Ingress created")
-                closeRef.current?.click()
+                closeRef?.current?.click()
+                
 
             })
             .catch(()=> toast.error("failed to create ingress"))

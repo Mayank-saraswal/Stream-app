@@ -32,8 +32,8 @@ export const useViewerToken = (hostIdentity: string) => {
           setName(decodedToken.name);
         }
 
-        if (decodedToken.sub) {
-          setIdentity(decodedToken.sub);
+        if (decodedToken.jti) {
+          setIdentity(decodedToken.jti);
         }
       } catch (error) {
         toast.error("Error creating token");

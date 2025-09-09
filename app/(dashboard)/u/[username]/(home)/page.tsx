@@ -16,7 +16,7 @@ const CreatorUser = async ({ params }: CreatorProps) => {
   const user = await getUserByUsername((await params).username);
 
 
-  if (!user || !externalUser || user.externalUserId !== externalUser.id || !user.stream) {
+  if (!user || !externalUser || user.externalUserId !== externalUser?.id || !user.stream) {
     throw new Error("Unauthorized");
   }
 
